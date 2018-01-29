@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="翔子Shaun" />
+
+
+
+<meta name="description" content="Git Cheat Sheet廖雪峰Git教程 git安装：$ brew install git git配置：12$ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global user.email &amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git.md">
+<meta property="og:url" content="http://yoursite.com/2018/01/29/git-md/index.html">
+<meta property="og:site_name" content="翔子Shaun&#39;s Blog">
+<meta property="og:description" content="Git Cheat Sheet廖雪峰Git教程 git安装：$ brew install git git配置：12$ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global user.email &amp;quot;email@example.com&amp;quot;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-29T03:33:56.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git.md">
+<meta name="twitter:description" content="Git Cheat Sheet廖雪峰Git教程 git安装：$ brew install git git配置：12$ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config --global user.email &amp;quot;email@example.com&amp;quot;">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="翔子Shaun&#39;s Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>git.md | 翔子Shaun&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/cloud.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">翔子Shaun</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">不要因为走得太远就忘了当初为什么出发</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/1764059837/profile?topnav=1&wvr=6&is_all=1" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">翔子Shaun</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/cloud.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">翔子Shaun</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不要因为走得太远就忘了当初为什么出发</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/1764059837/profile?topnav=1&wvr=6&is_all=1" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-git-md" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/29/git-md/" class="article-date">
+      <time datetime="2018-01-29T03:30:47.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git.md
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Git-Cheat-Sheet"><a href="#Git-Cheat-Sheet" class="headerlink" title="Git Cheat Sheet"></a>Git Cheat Sheet</h1><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a></p>
+<h5 id="git安装："><a href="#git安装：" class="headerlink" title="git安装："></a>git安装：</h5><p><code>$ brew install git</code></p>
+<h5 id="git配置："><a href="#git配置：" class="headerlink" title="git配置："></a>git配置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot; </span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="创建仓库："><a href="#创建仓库：" class="headerlink" title="创建仓库："></a>创建仓库：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
+<p><code>pwd</code> 用于显示当前目录</p>
+<h5 id="初始化git仓库："><a href="#初始化git仓库：" class="headerlink" title="初始化git仓库："></a>初始化git仓库：</h5><p><code>$ git init</code></p>
+<h5 id="添加文件到git仓库："><a href="#添加文件到git仓库：" class="headerlink" title="添加文件到git仓库："></a>添加文件到git仓库：</h5><h6 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h6><p><code>$ git add file.txt</code></p>
+<h6 id="或者添加多个文件"><a href="#或者添加多个文件" class="headerlink" title="或者添加多个文件"></a>或者添加多个文件</h6><p><code>$ git add file1.txt file2.txt</code></p>
+<h6 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h6><p><code>$ git commit -m &quot;Your Comments&quot;</code></p>
+<h5 id="查看仓库当前状态："><a href="#查看仓库当前状态：" class="headerlink" title="查看仓库当前状态："></a>查看仓库当前状态：</h5><p><code>$ git status</code></p>
+<h5 id="查看具体的修改内容："><a href="#查看具体的修改内容：" class="headerlink" title="查看具体的修改内容："></a>查看具体的修改内容：</h5><p><code>$ git diff file.txt</code></p>
+<p><code>$ git diff HEAD -- file</code>可以查看工作区和已提交到版本库的文件内容差异</p>
+<h5 id="查看当前窗口下提交commit的历史记录："><a href="#查看当前窗口下提交commit的历史记录：" class="headerlink" title="查看当前窗口下提交commit的历史记录："></a>查看当前窗口下提交commit的历史记录：</h5><p><code>$ git log</code></p>
+<h5 id="添加参数可使显示信息简洁："><a href="#添加参数可使显示信息简洁：" class="headerlink" title="添加参数可使显示信息简洁："></a>添加参数可使显示信息简洁：</h5><p><code>$ git log --pretty=oneline</code></p>
+<p>或</p>
+<p><code>$ git log --pretty=oneline --abbrev-commit</code></p>
+<h5 id="将文件回溯到上一个版本或更久的版本："><a href="#将文件回溯到上一个版本或更久的版本：" class="headerlink" title="将文件回溯到上一个版本或更久的版本："></a>将文件回溯到上一个版本或更久的版本：</h5><p><code>$ git reset --hard HEAD^</code></p>
+<p><code>HEAD</code> 表示当前版本，上一个版本就是<code>HEAD^</code>，上上个版本就是<code>HEAD^^</code>，上100个版本可以写成<code>HEAD~100</code></p>
+<h5 id="在当前命令行窗口未关闭的前提下，提供-commit-id-仍然可以回到未来的某个版本："><a href="#在当前命令行窗口未关闭的前提下，提供-commit-id-仍然可以回到未来的某个版本：" class="headerlink" title="在当前命令行窗口未关闭的前提下，提供 commit id 仍然可以回到未来的某个版本："></a>在当前命令行窗口未关闭的前提下，提供 <code>commit id</code> 仍然可以回到未来的某个版本：</h5><p><code>$ git reset --hard Your Commit id</code></p>
+<h5 id="查看命令历史："><a href="#查看命令历史：" class="headerlink" title="查看命令历史："></a>查看命令历史：</h5><p><code>$ git reflog</code></p>
+<h5 id="当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令："><a href="#当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令：" class="headerlink" title="当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令："></a>当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令：</h5><p><code>$ git checkout -- file</code></p>
+<h5 id="不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令："><a href="#不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令：" class="headerlink" title="不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令："></a>不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令：</h5><p><code>$ git reset HEAD file</code><br>把暂存区的修改撤销掉（unstage），重新放回工作区</p>
+<h5 id="第二步再用："><a href="#第二步再用：" class="headerlink" title="第二步再用："></a>第二步再用：</h5><p><code>$ git checkout -- file</code></p>
+<h5 id="已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库："><a href="#已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库：" class="headerlink" title="已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库："></a>已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库：</h5><p>参考上面 <code>$ git reset --hard HEAD^</code> 部分</p>
+<h5 id="删除文件操作："><a href="#删除文件操作：" class="headerlink" title="删除文件操作："></a>删除文件操作：</h5><p>直接删除工作区文件可直接在shell利用命令：</p>
+<p><code>$ rm file</code> </p>
+<p>如果一个文件已经被提交到版本库，发现工作区文件误删，可利用命令恢复至版本库里的最新版本：</p>
+<p><code>$ git checkout -- file</code></p>
+<p>如果是确定连版本库的文件也删除，更彻底方式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git rm file</span><br><span class="line">$ git commit -m &quot;Your Comments&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key:"></a>创建SSH Key:</h5><p><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
+<h5 id="关联远程库："><a href="#关联远程库：" class="headerlink" title="关联远程库："></a>关联远程库：</h5><p><code>$ git remote add origin Your HTTP or SSH</code></p>
+<p>远程库的名字就是 <code>origin</code> ，这是Git默认的叫法，也可以改成别的。</p>
+<h5 id="关联后第一次推送master分支的所有内容："><a href="#关联后第一次推送master分支的所有内容：" class="headerlink" title="关联后第一次推送master分支的所有内容："></a>关联后第一次推送master分支的所有内容：</h5><p><code>$ git push -u origin master</code></p>
+<p>参数 <code>-u</code> 是指Git不但会把本地的 <code>master</code> 分支内容推送到远程新的 <code>master</code> 分支，还会把本地的 <code>master</code> 分支和远程的 <code>master</code> 分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令</p>
+<p><code>$ git push origin master</code> 推送最新修改</p>
+<h5 id="克隆仓库（推荐使用SSH协议，速度快，省去口令）："><a href="#克隆仓库（推荐使用SSH协议，速度快，省去口令）：" class="headerlink" title="克隆仓库（推荐使用SSH协议，速度快，省去口令）："></a>克隆仓库（推荐使用SSH协议，速度快，省去口令）：</h5><p><code>$ git clone Your Repo Address</code></p>
+<h5 id="创建dev分支，并切换到dev分支："><a href="#创建dev分支，并切换到dev分支：" class="headerlink" title="创建dev分支，并切换到dev分支："></a>创建dev分支，并切换到dev分支：</h5><p><code>$ git checkout -b &lt;name&gt;</code></p>
+<p>其中 <code>get checkout</code> 命令加上参数 <code>-b</code> 表示创建并切换，相当于两条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;name&gt;</span><br><span class="line">$ git checkout &lt;name&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="查看当前分支："><a href="#查看当前分支：" class="headerlink" title="查看当前分支："></a>查看当前分支：</h5><p><code>$ git branch</code></p>
+<h5 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h5><p><code>$ git checkout &lt;name&gt;</code></p>
+<h5 id="合并某分支到当前分支："><a href="#合并某分支到当前分支：" class="headerlink" title="合并某分支到当前分支："></a>合并某分支到当前分支：</h5><p><code>$ git merge &lt;name&gt;</code></p>
+<h5 id="删除分支："><a href="#删除分支：" class="headerlink" title="删除分支："></a>删除分支：</h5><p><code>$ git branch -d &lt;name&gt;</code></p>
+<h5 id="查看分支："><a href="#查看分支：" class="headerlink" title="查看分支："></a>查看分支：</h5><p><code>$ git branch</code></p>
+<h5 id="查看分支合并图："><a href="#查看分支合并图：" class="headerlink" title="查看分支合并图："></a>查看分支合并图：</h5><p><code>$ git log --graph</code></p>
+<h5 id="查看分支合并的具体commit信息并以图的形式给出："><a href="#查看分支合并的具体commit信息并以图的形式给出：" class="headerlink" title="查看分支合并的具体commit信息并以图的形式给出："></a>查看分支合并的具体commit信息并以图的形式给出：</h5><p><code>$ git log --graph --pretty=oneline --abbrev-commit</code></p>
+<p>通常，Git会用<code>Fast forward</code> 模式，但这种模式下，删除分支后，会丢掉分支信息，看不出曾经做过合并。</p>
+<p>合并分支时，加上 <code>--no-ff</code> 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并</p>
+<p><code>$ git merge --no-ff -m &quot;Your Comments&quot; &lt;name&gt;</code></p>
+<p>加上 <code>-m</code> 参数，把commit描述写进去</p>
+<h5 id="当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作："><a href="#当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作：" class="headerlink" title="当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作："></a>当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作：</h5><p><code>$ git stash</code></p>
+<p>恢复工作前先用命令 <code>$ git stash list</code> 查看要恢复的stash</p>
+<p>恢复时有两种方式</p>
+<p>命令一：</p>
+<p><code>$ git stash apply stash@{stashnumber}</code> </p>
+<p>恢复后，stash内容并不删除，你需要用 <code>git stash drop</code> 来删除</p>
+<p>命令二：</p>
+<p><code>$ git stash pop stash@{stashnumber}</code></p>
+<p>恢复的同时把stash内容也删了</p>
+<h5 id="如果要丢弃一个没有被合并过的分支，需要强行删除："><a href="#如果要丢弃一个没有被合并过的分支，需要强行删除：" class="headerlink" title="如果要丢弃一个没有被合并过的分支，需要强行删除："></a>如果要丢弃一个没有被合并过的分支，需要强行删除：</h5><p><code>$ git branch -D &lt;name&gt;</code></p>
+<p>开发一个新feature，最好新建一个分支</p>
+<h5 id="查看远程库信息"><a href="#查看远程库信息" class="headerlink" title="查看远程库信息:"></a>查看远程库信息:</h5><p><code>$ git remote -v</code></p>
+<h5 id="从本地推送分支"><a href="#从本地推送分支" class="headerlink" title="从本地推送分支:"></a>从本地推送分支:</h5><p><code>$ git push origin branch-name</code></p>
+<p>如果推送失败，先用<code>$ git pull</code> 抓取远程的新提交</p>
+<h5 id="在本地创建和远程分支对应的分支"><a href="#在本地创建和远程分支对应的分支" class="headerlink" title="在本地创建和远程分支对应的分支:"></a>在本地创建和远程分支对应的分支:</h5><p><code>$ git checkout -b branch-name origin/branch-name</code></p>
+<p>本地和远程分支的名称最好一致</p>
+<h5 id="建立本地分支和远程分支的关联"><a href="#建立本地分支和远程分支的关联" class="headerlink" title="建立本地分支和远程分支的关联:"></a>建立本地分支和远程分支的关联:</h5><p><code>$ git branch --set-upstream branch-name origin/branch-name</code></p>
+<h5 id="从远程抓取分支"><a href="#从远程抓取分支" class="headerlink" title="从远程抓取分支:"></a>从远程抓取分支:</h5><p><code>$ git pull</code></p>
+<p>如果有冲突，要先处理冲突</p>
+<h5 id="多人协作模式："><a href="#多人协作模式：" class="headerlink" title="多人协作模式："></a>多人协作模式：</h5><ul>
+<li>首先，可以试图用 <code>$ git push origin branch-name</code> 推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用 <code>$ git pull</code> 试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用 <code>$ git push origin branch-name</code> 推送就能成功！</li>
+<li>如果 <code>$ git pull</code> 提示“<strong>no tracking information</strong>”，则说明本地分支和远程分支的链接关系没有创建，用命令<br><code>$ git branch --set-upstream branch-name origin/branch-name</code></li>
+</ul>
+<h5 id="打标签："><a href="#打标签：" class="headerlink" title="打标签："></a>打标签：</h5><ul>
+<li>首先切换到要打标签的分支上；</li>
+<li>命令 <code>$ git tag &lt;name&gt;</code> 用于新建一个标签，默认为 <code>HEAD</code> ，也可以指定一个commit id，<code>$ git tag &lt;name&gt; Commit ID</code></li>
+</ul>
+<p><code>$ git tag -a &lt;tagname&gt; -m &quot;blablabla...&quot;</code> 或后面加CommitID， 可以指定标签信息；</p>
+<p><code>$ git tag -s &lt;tagname&gt; -m &quot;blablabla...&quot;</code> 或后面加CommitID， 可以用PGP签名标签；</p>
+<p><code>$ git tag</code> 可以查看所有标签</p>
+<p><code>$ git show &lt;tagname&gt;</code> 查看标签信息</p>
+<h5 id="推送某个标签到远程："><a href="#推送某个标签到远程：" class="headerlink" title="推送某个标签到远程："></a>推送某个标签到远程：</h5><p><code>$ git push origin &lt;tagname&gt;</code></p>
+<h5 id="一次性推送全部尚未推送到远程的本地标签"><a href="#一次性推送全部尚未推送到远程的本地标签" class="headerlink" title="一次性推送全部尚未推送到远程的本地标签:"></a>一次性推送全部尚未推送到远程的本地标签:</h5><p><code>$ git push origin --tags</code></p>
+<h5 id="删除一个本地标签："><a href="#删除一个本地标签：" class="headerlink" title="删除一个本地标签："></a>删除一个本地标签：</h5><p><code>$ git tag -d &lt;tagname&gt;</code></p>
+<h5 id="如果标签已经推送到远程，要删除远程标签分两步："><a href="#如果标签已经推送到远程，要删除远程标签分两步：" class="headerlink" title="如果标签已经推送到远程，要删除远程标签分两步："></a>如果标签已经推送到远程，要删除远程标签分两步：</h5><ul>
+<li>先从本地删除<code>$ git tag -d &lt;tagname&gt;</code></li>
+<li>再从远程删除 <code>$ git push origin :refs/tags/&lt;tagname&gt;</code></li>
+</ul>
+<h5 id="忽略某些文件时，需要编写"><a href="#忽略某些文件时，需要编写" class="headerlink" title="忽略某些文件时，需要编写:"></a>忽略某些文件时，需要编写:</h5><p><code>.gitignore</code></p>
+<p><code>.gitignore</code> 文件本身要放到版本库里，并且可以对<code>.gitignore</code>做版本管理！</p>
+<p>若此时想添加一个文件到Git，但发现添加不了，原因是这个文件被<code>.gitignore</code>忽略了;</p>
+<p>如果你确实想添加该文件，可以用-f强制添加到Git：</p>
+<p><code>$ git add -f filename</code></p>
+<p>或是想找到<code>.gitignore</code>中哪个规则写错了：</p>
+<p><code>$ git check-ignore -v filename</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/29/git-md/">git.md</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">翔子Shaun</a></p>
+        <p><span>发布时间:</span>2018-01-29, 11:30:47</p>
+        <p><span>最后更新:</span>2018-01-29, 11:33:56</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/29/git-md/" title="git.md">http://yoursite.com/2018/01/29/git-md/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/01/29/git-md/　　作者: 翔子Shaun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/11/28/regex/">
+                    Regex Cheat Sheet
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-Cheat-Sheet"><span class="toc-number">1.</span> <span class="toc-text">Git Cheat Sheet</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#git安装："><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">git安装：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#git配置："><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">git配置：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建仓库："><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">创建仓库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化git仓库："><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text">初始化git仓库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加文件到git仓库："><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text">添加文件到git仓库：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#第一步"><span class="toc-number">1.0.0.0.5.1.</span> <span class="toc-text">第一步:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#或者添加多个文件"><span class="toc-number">1.0.0.0.5.2.</span> <span class="toc-text">或者添加多个文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#第二步："><span class="toc-number">1.0.0.0.5.3.</span> <span class="toc-text">第二步：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看仓库当前状态："><span class="toc-number">1.0.0.0.6.</span> <span class="toc-text">查看仓库当前状态：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看具体的修改内容："><span class="toc-number">1.0.0.0.7.</span> <span class="toc-text">查看具体的修改内容：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前窗口下提交commit的历史记录："><span class="toc-number">1.0.0.0.8.</span> <span class="toc-text">查看当前窗口下提交commit的历史记录：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加参数可使显示信息简洁："><span class="toc-number">1.0.0.0.9.</span> <span class="toc-text">添加参数可使显示信息简洁：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#将文件回溯到上一个版本或更久的版本："><span class="toc-number">1.0.0.0.10.</span> <span class="toc-text">将文件回溯到上一个版本或更久的版本：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在当前命令行窗口未关闭的前提下，提供-commit-id-仍然可以回到未来的某个版本："><span class="toc-number">1.0.0.0.11.</span> <span class="toc-text">在当前命令行窗口未关闭的前提下，提供 commit id 仍然可以回到未来的某个版本：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看命令历史："><span class="toc-number">1.0.0.0.12.</span> <span class="toc-text">查看命令历史：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令："><span class="toc-number">1.0.0.0.13.</span> <span class="toc-text">当改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令："><span class="toc-number">1.0.0.0.14.</span> <span class="toc-text">不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#第二步再用："><span class="toc-number">1.0.0.0.15.</span> <span class="toc-text">第二步再用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库："><span class="toc-number">1.0.0.0.16.</span> <span class="toc-text">已经提交了不合适的修改到版本库时，想要撤销本次提交，前提是还没推送到远程库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除文件操作："><span class="toc-number">1.0.0.0.17.</span> <span class="toc-text">删除文件操作：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建SSH-Key"><span class="toc-number">1.0.0.0.18.</span> <span class="toc-text">创建SSH Key:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关联远程库："><span class="toc-number">1.0.0.0.19.</span> <span class="toc-text">关联远程库：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关联后第一次推送master分支的所有内容："><span class="toc-number">1.0.0.0.20.</span> <span class="toc-text">关联后第一次推送master分支的所有内容：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#克隆仓库（推荐使用SSH协议，速度快，省去口令）："><span class="toc-number">1.0.0.0.21.</span> <span class="toc-text">克隆仓库（推荐使用SSH协议，速度快，省去口令）：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建dev分支，并切换到dev分支："><span class="toc-number">1.0.0.0.22.</span> <span class="toc-text">创建dev分支，并切换到dev分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看当前分支："><span class="toc-number">1.0.0.0.23.</span> <span class="toc-text">查看当前分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#切换分支："><span class="toc-number">1.0.0.0.24.</span> <span class="toc-text">切换分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#合并某分支到当前分支："><span class="toc-number">1.0.0.0.25.</span> <span class="toc-text">合并某分支到当前分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除分支："><span class="toc-number">1.0.0.0.26.</span> <span class="toc-text">删除分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看分支："><span class="toc-number">1.0.0.0.27.</span> <span class="toc-text">查看分支：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看分支合并图："><span class="toc-number">1.0.0.0.28.</span> <span class="toc-text">查看分支合并图：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看分支合并的具体commit信息并以图的形式给出："><span class="toc-number">1.0.0.0.29.</span> <span class="toc-text">查看分支合并的具体commit信息并以图的形式给出：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作："><span class="toc-number">1.0.0.0.30.</span> <span class="toc-text">当手头工作未完成，可以先把工作现场储存，等以后恢复现场再继续工作：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如果要丢弃一个没有被合并过的分支，需要强行删除："><span class="toc-number">1.0.0.0.31.</span> <span class="toc-text">如果要丢弃一个没有被合并过的分支，需要强行删除：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看远程库信息"><span class="toc-number">1.0.0.0.32.</span> <span class="toc-text">查看远程库信息:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#从本地推送分支"><span class="toc-number">1.0.0.0.33.</span> <span class="toc-text">从本地推送分支:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在本地创建和远程分支对应的分支"><span class="toc-number">1.0.0.0.34.</span> <span class="toc-text">在本地创建和远程分支对应的分支:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建立本地分支和远程分支的关联"><span class="toc-number">1.0.0.0.35.</span> <span class="toc-text">建立本地分支和远程分支的关联:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#从远程抓取分支"><span class="toc-number">1.0.0.0.36.</span> <span class="toc-text">从远程抓取分支:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#多人协作模式："><span class="toc-number">1.0.0.0.37.</span> <span class="toc-text">多人协作模式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#打标签："><span class="toc-number">1.0.0.0.38.</span> <span class="toc-text">打标签：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送某个标签到远程："><span class="toc-number">1.0.0.0.39.</span> <span class="toc-text">推送某个标签到远程：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一次性推送全部尚未推送到远程的本地标签"><span class="toc-number">1.0.0.0.40.</span> <span class="toc-text">一次性推送全部尚未推送到远程的本地标签:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#删除一个本地标签："><span class="toc-number">1.0.0.0.41.</span> <span class="toc-text">删除一个本地标签：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如果标签已经推送到远程，要删除远程标签分两步："><span class="toc-number">1.0.0.0.42.</span> <span class="toc-text">如果标签已经推送到远程，要删除远程标签分两步：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#忽略某些文件时，需要编写"><span class="toc-number">1.0.0.0.43.</span> <span class="toc-text">忽略某些文件时，需要编写:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"git.md　| 翔子Shaun's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/11/28/regex/" title="下一篇: Regex Cheat Sheet">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/29/git-md/">git.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/regex/">Regex Cheat Sheet</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/24/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 翔子Shaun
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
